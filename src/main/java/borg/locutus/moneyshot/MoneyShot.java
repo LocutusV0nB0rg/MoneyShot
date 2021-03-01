@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class MoneyShot extends LabyModAddon {
     public static boolean incomingPayments = true;
     public static boolean outgoingPayments = true;
+    public static int delayInTicks = 2;
     public static int daysOfSaving = 7;
     public static String pathOfSaveFolder = "";
 
@@ -38,6 +39,7 @@ public class MoneyShot extends LabyModAddon {
     public void loadConfig() {
         incomingPayments = !getConfig().has("incomingPayments") || getConfig().get("incomingPayments").getAsBoolean();
         outgoingPayments = !getConfig().has("outgoingPayments") || getConfig().get("outgoingPayments").getAsBoolean();
+        delayInTicks = getConfig().has( "delayInTicks" ) ? getConfig().get( "delayInTicks" ).getAsInt() : 2;
         daysOfSaving = getConfig().has( "daysOfSaving" ) ? getConfig().get( "daysOfSaving" ).getAsInt() : 7;
         pathOfSaveFolder = getConfig().has( "pathOfSaveFolder" ) ? getConfig().get( "pathOfSaveFolder" ).getAsString(): "";
     }
@@ -47,6 +49,8 @@ public class MoneyShot extends LabyModAddon {
         subSettings.add( new HeaderElement("Protokoll-Einstellungen"));
         subSettings.add( new BooleanElement( "Eingehende Zahlungen protokollieren", this, new ControlElement.IconData( Material.LEVER ), "incomingPayments", incomingPayments ) );
         subSettings.add( new BooleanElement( "Ausgehende Zahlungen protokollieren", this, new ControlElement.IconData( Material.LEVER ), "outgoingPayments", outgoingPayments ) );
+        subSettings.add( new SliderElement( "Screenshotdelay nach Zahlung in Ticks", this, new ControlElement.IconData( Material.REDSTONE_LAMP_ON ), "delayInTicks", delayInTicks ).setRange( 1, 10 ) );
+
 
         subSettings.add( new HeaderElement("Dateispeicherung"));
         subSettings.add( new SliderElement( "Speicherdauer in Tagen", this, new ControlElement.IconData( Material.ITEM_FRAME ), "daysOfSaving", daysOfSaving ).setRange( 1, 31 ) );

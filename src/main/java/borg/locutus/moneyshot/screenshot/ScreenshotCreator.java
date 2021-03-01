@@ -45,6 +45,6 @@ public class ScreenshotCreator {
             public void run() {
                 ScreenshotCreator.saveProofScreenshot(playerName, amount, suffix);
             }
-        }, 2);
+        }, MoneyShot.delayInTicks);
     }
 }

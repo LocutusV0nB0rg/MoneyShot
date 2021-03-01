@@ -3,7 +3,7 @@
   "name": "MoneyShot",
   "mainClass": "borg.locutus.moneyshot.MoneyShot",
   "description": "Screenshot-Tool für GrieferGames. Bei jeder Transaktion wird ein Screenshot erstellt, und eine einstellbare Anzahl an Tagen gespeichert. (c) LocutusVonBorg 2021",
-  "version": 0.1,
+  "version": 1.0,
   "author": "LocutusVonBorg",
   "category": 2,
   "icon": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/50/Book_JE2_BE2.png/revision/latest/scale-to-width-down/150?cb=20190530235325"
